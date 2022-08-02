@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    runs-on: ci-agents
+    runs-on: ci-agent
     steps:
       - name: Run a multi-line script
         run: |
