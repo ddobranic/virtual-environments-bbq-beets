@@ -17,4 +17,4 @@ jobs:
           repository: actions/virtual-environments
           
       - name: Build image
-        run: ls
+        run: ./images.CI/linux-and-win/build-image.ps1
