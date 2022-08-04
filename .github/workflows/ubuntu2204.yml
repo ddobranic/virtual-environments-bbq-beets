@@ -11,6 +11,7 @@ jobs:
   build:
     runs-on: ci-agent
     steps:
-      - name: Run a multi-line script
-        run: |
-          packer -v
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+        with:
+          repository: actions/virtual-environments
