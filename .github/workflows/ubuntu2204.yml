@@ -17,4 +17,5 @@ jobs:
           repository: actions/runner-images
           
       - name: Build image
-        run: ./images.CI/linux-and-win/build-image.ps1
+        run: ./images.CI/linux-and-win/build-image.ps1 `
+              -ResourcesNamePrefix 1
