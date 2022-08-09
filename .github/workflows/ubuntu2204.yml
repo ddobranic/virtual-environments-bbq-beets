@@ -14,7 +14,7 @@ jobs:
       - name: Checkout the repository
         uses: actions/checkout@v3
         with:
-          repository: actions/runner images
+          repository: actions/runner-images
           
       - name: Build image
         run: ./images.CI/linux-and-win/build-image.ps1
