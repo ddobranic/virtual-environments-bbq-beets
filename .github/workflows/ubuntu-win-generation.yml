@@ -28,7 +28,7 @@ jobs:
           
       - name: Set image varibles
         run: |
-          $ImageType="${{ github.event.inputs.choice }}"
+          $ImageType = "${{ github.event.inputs.choice }}"
 
           if ($ImageType.StartsWith("ubuntu")) { $TemplateDirectoryName = "linux" } else { $TemplateDirectoryName = "win" }
           
@@ -45,7 +45,7 @@ jobs:
       - name: Build image
         run: |
             ls
-             echo $TemplatePath
+             echo "path is $TemplatePath"
             ./images.CI/linux-and-win/build-image.ps1 `
               -TemplatePath $env:TemplatePath `
               -ClientId ${{ secrets.CLIENT_ID }} `
