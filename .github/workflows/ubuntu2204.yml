@@ -19,13 +19,9 @@ jobs:
           
       - name: Set image varibles
         run: |
-          ImageType="${{ github.event.inputs.PLATFORM }}"
+          $ImageType="${{ github.event.inputs.PLATFORM }}"
 
-          if [[ $ImageType == "ubuntu"* ]]; then
-              TemplateDirectoryName=linux
-          else
-              TemplateDirectoryName=win
-          fi
+          if ($ImageType.StartsWith("ubuntu"){ TemplateDirectoryName=linux } else { TemplateDirectoryName=win }
           
           TemplateDirectoryPath="images/$TemplateDirectoryName"
           TemplatePath="$TemplateDirectoryPath/$ImageType.pkr.hcl"
@@ -36,7 +32,7 @@ jobs:
           echo "::set-env name=TemplateDirectoryPath::$TemplateDirectoryPath"
         env:
            ACTIONS_ALLOW_UNSECURE_COMMANDS: true
-        shell: bash
+        shell: pwsh
             
          
       - name: testing
