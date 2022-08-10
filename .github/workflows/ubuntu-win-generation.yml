@@ -26,7 +26,7 @@ jobs:
           
       - name: Set image varibles
         run: |
-          $ImageType="${{ github.event.inputs.PLATFORM }}"
+          $ImageType="${{ github.event.inputs.choice }}"
 
           if ($ImageType.StartsWith("ubuntu")) { $TemplateDirectoryName = "linux" } else { $TemplateDirectoryName = "win" }
           
