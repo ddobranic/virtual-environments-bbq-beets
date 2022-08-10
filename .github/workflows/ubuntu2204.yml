@@ -26,7 +26,7 @@ jobs:
           TemplateDirectoryPath="images/$TemplateDirectoryName"
           TemplatePath="$TemplateDirectoryPath/$ImageType.pkr.hcl"
           
-          [[ ! -e $TemplatePath ]] && TemplatePath=$TemplateDirectoryPath/$ImageType.json
+          if ( -not $TemplatePath) { $TemplatePath=$TemplateDirectoryPath/$ImageType.json }
           
           echo "::set-env name=TemplatePath::$TemplatePath"
           echo "::set-env name=TemplateDirectoryPath::$TemplateDirectoryPath"
