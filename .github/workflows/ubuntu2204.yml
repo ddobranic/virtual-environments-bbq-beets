@@ -18,12 +18,11 @@ jobs:
           repository: actions/runner-images
           
       - name: Set image varibles
+        if: ${{ startsWith(github.event.inputs.PLATFORM, 'Ubuntu') }}
         run: |
-         if [ "github.event.inputs.PLATFORM" == *"Ubuntu"* ]; then
-            echo "Hello, world!"
-         else
-            echo "Fail!"
-         fi
+          echo  " this is {{ github.event.inputs.PLATFORM }}"
+          
+
          
       - name: testing
         run: echo $res
