@@ -18,6 +18,9 @@ jobs:
           repository: actions/runner-images
           
       - name: Set image varibles
+        if: ${{ startsWith(github.event.inputs.PLATFORM, 'Ubuntu') }}
+        run: |
+         echo "Hello World"
           
       - name: Build image
         run: ./images.CI/linux-and-win/build-image.ps1 `
