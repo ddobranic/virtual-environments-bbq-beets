@@ -21,12 +21,12 @@ jobs:
         if: ${{ startsWith(github.event.inputs.PLATFORM, 'Ubuntu') }}
         run: |
          res="Hello World!"
+         
+      - name: testing
+        run: echo $res
           
       - name: Build image
         run: ./images.CI/linux-and-win/build-image.ps1 `
               -TemplatePath linux `
               -ClientId ${{ secrets.CLIENT_ID }} `
               -ResourcesNamePrefix 1
-      
-      - name: testing
-        run: echo $res
