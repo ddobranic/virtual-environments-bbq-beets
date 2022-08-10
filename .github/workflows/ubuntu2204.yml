@@ -33,12 +33,6 @@ jobs:
         env:
            ACTIONS_ALLOW_UNSECURE_COMMANDS: true
         shell: pwsh
-            
-         
-      - name: testing
-        run: | 
-          ls $TemplateDirectoryPath
-          ls $TemplatePath
           
       - name: Build image
         run: ./images.CI/linux-and-win/build-image.ps1 `
