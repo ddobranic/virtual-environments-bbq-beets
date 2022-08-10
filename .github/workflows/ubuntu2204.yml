@@ -1,4 +1,4 @@
-name: CI
+name: MMS image generation
 on:
   workflow_dispatch:
     inputs:
@@ -24,7 +24,8 @@ jobs:
           else
               imagetype=win
           fi
-          echo "::set-env name=imagetype::$imagetype
+          
+          echo "::set-env name=imagetype::$imagetype"
          
       - name: testing
         run: echo $imagetype
