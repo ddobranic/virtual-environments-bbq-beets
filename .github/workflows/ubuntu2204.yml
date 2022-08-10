@@ -21,7 +21,7 @@ jobs:
         run: |
           $ImageType="${{ github.event.inputs.PLATFORM }}"
 
-          if ($ImageType.StartsWith("ubuntu")) { $TemplateDirectoryName=linux } else { $TemplateDirectoryName=win }
+          if ($ImageType.StartsWith("ubuntu")) { $TemplateDirectoryName = "linux" } else { $TemplateDirectoryName = "win" }
           
           TemplateDirectoryPath="images/$TemplateDirectoryName"
           TemplatePath="$TemplateDirectoryPath/$ImageType.pkr.hcl"
