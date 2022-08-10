@@ -24,8 +24,10 @@ jobs:
           else
               imagetype=win
           fi
-          
           echo "::set-env name=imagetype::$imagetype"
+        env:
+           ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+            
          
       - name: testing
         run: echo $imagetype
