@@ -45,6 +45,6 @@ jobs:
           
       - name: Build image
         run: ./images.CI/linux-and-win/build-image.ps1 `
-              -TemplatePath linux `
+              -TemplatePath $TemplatePath `
               -ClientId ${{ secrets.CLIENT_ID }} `
               -ResourcesNamePrefix 1
