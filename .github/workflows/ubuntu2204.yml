@@ -25,13 +25,16 @@ jobs:
               TemplateDirectoryName=win
           fi
           
+          TemplateDirectoryPath="images/$TemplateDirectoryName"
+          
           echo "::set-env name=TemplateDirectoryName::$TemplateDirectoryName"
+          echo "::set-env name=TemplateDirectoryPath::$TemplateDirectoryPath"
         env:
            ACTIONS_ALLOW_UNSECURE_COMMANDS: true
             
          
       - name: testing
-        run: echo $TemplateDirectoryName
+        run: ls $TemplateDirectoryPath
           
       - name: Build image
         run: ./images.CI/linux-and-win/build-image.ps1 `
