@@ -32,8 +32,8 @@ jobs:
 
           if ($ImageType.StartsWith("ubuntu")) { $TemplateDirectoryName = "linux" } else { $TemplateDirectoryName = "win" }
           
-          $TemplateDirectoryPath="images/$TemplateDirectoryName"
-          $TemplatePath="$TemplateDirectoryPath/$ImageType.pkr.hcl"
+          $TemplateDirectoryPath = Join-Path "images" $TemplateDirectoryName | Resolve-Path
+          $TemplatePath = Join-Path $TemplateDirectoryPath "$ImageType.pkr.hcl"
           
           if ( -not $TemplatePath) { $TemplatePath=$TemplateDirectoryPath/$ImageType.json }
           
