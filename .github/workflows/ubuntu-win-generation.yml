@@ -51,7 +51,7 @@ jobs:
               -ClientId ${{ secrets.CLIENT_ID }} `
               -ClientSecret ${{ secrets.CLIENT_SECRET }} `
               -Location ${{ secrets.AZURE_LOCATION }} `
-              -ResourcesNamePrefix ${{ secrets.BUILD_ID }} `
+              -ResourcesNamePrefix pkr_566tkgth `
               -ResourceGroup ${{ secrets.AZURE_RESOURCE_GROUP }} `
               -StorageAccount ${{ secrets.AZURE_STORAGE_ACCOUNT }} `
               -SubscriptionId ${{ secrets.AZURE_SUBSCRIPTION }} `
