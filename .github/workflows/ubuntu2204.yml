@@ -20,7 +20,7 @@ jobs:
       - name: Set image varibles
         if: ${{ startsWith(github.event.inputs.PLATFORM, 'Ubuntu') }}
         run: |
-         $res = "Hello World!"
+         res="Hello World!"
           
       - name: Build image
         run: ./images.CI/linux-and-win/build-image.ps1 `
