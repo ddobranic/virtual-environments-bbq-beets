@@ -49,3 +49,4 @@ jobs:
               -TemplatePath $TemplatePath `
               -ClientId ${{ secrets.CLIENT_ID }} `
               -ResourcesNamePrefix 1
+        shell: pwsh
