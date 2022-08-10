@@ -35,7 +35,9 @@ jobs:
         shell: pwsh
           
       - name: Build image
-        run: ./images.CI/linux-and-win/build-image.ps1 `
+        run: |
+            echo $env:TemplatePath
+            ./images.CI/linux-and-win/build-image.ps1 `
               -TemplatePath $TemplatePath `
               -ClientId ${{ secrets.CLIENT_ID }} `
               -ResourcesNamePrefix 1
