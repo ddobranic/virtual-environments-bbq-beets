@@ -19,7 +19,7 @@ jobs:
           
       - name: Set image varibles
         run: |
-          if [[ ${{ github.event.inputs.PLATFORM }} == "ubuntu"* ]]; then
+          if [[ ${{ github.event.inputs.PLATFORM }} == "ubuntu*" ]]; then
               TemplateDirectoryName=linux
           else
               TemplateDirectoryName=win
