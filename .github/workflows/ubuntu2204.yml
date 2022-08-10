@@ -18,9 +18,10 @@ jobs:
           repository: actions/runner-images
           
       - name: Set image varibles
-        if: ${{ startsWith(github.event.inputs.PLATFORM, 'Ubuntu') }}
         run: |
-          echo  " this is ${{ github.event.inputs.PLATFORM }}"
+          if [[ ${{ github.event.inputs.PLATFORM }} == "Ubuntu" ]]; then
+            echo "Here we are!"
+          fi
           
 
          
