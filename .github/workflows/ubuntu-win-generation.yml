@@ -49,4 +49,4 @@ jobs:
               -ClientId ${{ secrets.CLIENT_ID }} `
               -ClientSecret ${{ secrets.CLIENT_SECRET }} `
               -Location ${{ secrets.AZURE_LOCATION }} `
-              -ResourcesNamePrefix ${{ secrets.BUILD_PREFIX }}
+              -ResourcesNamePrefix ${{ secrets.BUILD_ID }}
