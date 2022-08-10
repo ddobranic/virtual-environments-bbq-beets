@@ -4,7 +4,7 @@ on:
     inputs:
       PLATFORM:
         description: An OS to build
-        required: true
+        required: false
   pull_request:
     branches: [ "main" ]
 
@@ -20,7 +20,7 @@ jobs:
       - name: Set image varibles
         if: ${{ startsWith(github.event.inputs.PLATFORM, 'Ubuntu') }}
         run: |
-          echo  " this is {{ github.event.inputs.PLATFORM }}"
+          echo  " this is ${{ github.event.inputs.PLATFORM }}"
           
 
          
