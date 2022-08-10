@@ -36,6 +36,7 @@ jobs:
           echo "::set-env name=TemplateDirectoryPath::$TemplateDirectoryPath"
         env:
            ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+        shell: bash
             
          
       - name: testing
