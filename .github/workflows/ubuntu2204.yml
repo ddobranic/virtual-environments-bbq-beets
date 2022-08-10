@@ -14,6 +14,8 @@ defaults:
 jobs:
   build:
     runs-on: linux-agents
+    env:
+      AzureLocation: westus2
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v3
@@ -42,4 +44,4 @@ jobs:
               -TemplatePath $env:TemplatePath `
               -ClientId ${{ secrets.CLIENT_ID }} `
               -ClientSecret ${{ secrets.CLIENT_SECRET }} `
-              -ResourcesNamePrefix 1
+              -Location $AzureLocation
