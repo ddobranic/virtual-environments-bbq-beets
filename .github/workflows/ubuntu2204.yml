@@ -3,10 +3,13 @@ on:
   workflow_dispatch:
     inputs:
       PLATFORM:
-        description: An OS to build
+        description: An OS image to build
         required: false
   pull_request:
     branches: [ "main" ]
+defaults:
+  run:
+    shell: pwsh
 
 jobs:
   build:
@@ -32,13 +35,10 @@ jobs:
           echo "::set-env name=TemplateDirectoryPath::$TemplateDirectoryPath"
         env:
            ACTIONS_ALLOW_UNSECURE_COMMANDS: true
-        shell: pwsh
           
       - name: Build image
         run: |
-            echo $env:TemplatePath
             ./images.CI/linux-and-win/build-image.ps1 `
               -TemplatePath $env:TemplatePath `
               -ClientId ${{ secrets.CLIENT_ID }} `
               -ResourcesNamePrefix 1
-        shell: pwsh
