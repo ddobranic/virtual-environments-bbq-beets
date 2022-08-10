@@ -2,9 +2,13 @@ name: MMS image generation
 on:
   workflow_dispatch:
     inputs:
-      PLATFORM:
+      choice:
+        type: choice
         description: An OS image to build
-        required: false
+        options:
+          - ubuntu20.04
+          - ubuntu22.04
+        required: true
   pull_request:
     branches: [ "main" ]
 defaults:
