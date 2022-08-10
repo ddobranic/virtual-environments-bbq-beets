@@ -19,22 +19,27 @@ jobs:
           
       - name: Set image varibles
         run: |
-          if [[ ${{ github.event.inputs.PLATFORM }} == "ubuntu"* ]]; then
+          ImageType="${{ github.event.inputs.PLATFORM }}"
+
+          if [[ $ImageType == "ubuntu"* ]]; then
               TemplateDirectoryName=linux
           else
               TemplateDirectoryName=win
           fi
           
           TemplateDirectoryPath="images/$TemplateDirectoryName"
+          TemplatePath="$TemplateDirectoryPath/$ImageType.pkr.hcl"
           
-          echo "::set-env name=TemplateDirectoryName::$TemplateDirectoryName"
+          echo "::set-env name=TemplatePath::$TemplatePath"
           echo "::set-env name=TemplateDirectoryPath::$TemplateDirectoryPath"
         env:
            ACTIONS_ALLOW_UNSECURE_COMMANDS: true
             
          
       - name: testing
-        run: ls $TemplateDirectoryPath
+        run: | 
+          ls $TemplateDirectoryPath
+          ls $TemplatePath
           
       - name: Build image
         run: ./images.CI/linux-and-win/build-image.ps1 `
