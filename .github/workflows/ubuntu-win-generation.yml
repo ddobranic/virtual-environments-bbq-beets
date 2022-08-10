@@ -51,4 +51,7 @@ jobs:
               -Location ${{ secrets.AZURE_LOCATION }} `
               -ResourcesNamePrefix ${{ secrets.BUILD_ID }} `
               -ResourceGroup ${{ secrets.AZURE_RESOURCE_GROUP }} `
-              -StorageAccount ${{ secrets.AZURE_STORAGE_ACCOUNT }}
+              -StorageAccount ${{ secrets.AZURE_STORAGE_ACCOUNT }} `
+              -SubscriptionId ${{ secrets.AZURE_SUBSCRIPTION }} `
+              -TenantId ${{ secrets.AZURE_TENANT }}
+              
