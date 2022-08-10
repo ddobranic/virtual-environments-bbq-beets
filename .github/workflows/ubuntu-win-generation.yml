@@ -46,8 +46,6 @@ jobs:
           
       - name: Build image
         run: |
-            ls
-             echo "path is $env:TemplatePath"
             ./images.CI/linux-and-win/build-image.ps1 `
               -TemplatePath $env:TemplatePath `
               -ClientId ${{ secrets.CLIENT_ID }} `
