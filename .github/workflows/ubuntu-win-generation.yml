@@ -6,8 +6,10 @@ on:
         type: choice
         description: An OS image to build
         options:
-          - ubuntu20.04
-          - ubuntu22.04
+          - ubuntu2004
+          - ubuntu2204
+          - windows2019
+          - windows2022
         required: true
   pull_request:
     branches: [ "main" ]
