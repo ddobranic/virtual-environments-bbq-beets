@@ -21,6 +21,8 @@ jobs:
         run: |
          if [ "github.event.inputs.PLATFORM" == *"Ubuntu"* ]; then
             echo "Hello, world!"
+         else
+            echo "Fail!"
          fi
          
       - name: testing
