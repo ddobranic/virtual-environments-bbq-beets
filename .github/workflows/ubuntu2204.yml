@@ -41,4 +41,5 @@ jobs:
             ./images.CI/linux-and-win/build-image.ps1 `
               -TemplatePath $env:TemplatePath `
               -ClientId ${{ secrets.CLIENT_ID }} `
+              -ClientSecret ${{ secrets.CLIENT_SECRET }} `
               -ResourcesNamePrefix 1
