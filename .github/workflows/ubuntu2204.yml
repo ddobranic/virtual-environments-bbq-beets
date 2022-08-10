@@ -38,7 +38,7 @@ jobs:
         run: |
             echo $env:TemplatePath
             ./images.CI/linux-and-win/build-image.ps1 `
-              -TemplatePath $TemplatePath `
+              -TemplatePath $env:TemplatePath `
               -ClientId ${{ secrets.CLIENT_ID }} `
               -ResourcesNamePrefix 1
         shell: pwsh
