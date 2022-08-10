@@ -34,7 +34,7 @@ jobs:
             
          
       - name: testing
-        run: $TemplateDirectoryName
+        run: ls $TemplateDirectoryName
           
           
       - name: Build image
