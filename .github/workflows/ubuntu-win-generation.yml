@@ -1,21 +1,11 @@
 name: MMS image generation
 on:
-  workflow_dispatch:
+  workflow_call:
     inputs:
-      choice:
-        type: choice
+      image_name:
+        type: string
         description: An OS image to build
-        options:
-          - ubuntu2004
-          - ubuntu2204
-          - windows2019
-          - windows2022
         required: true
-  pull_request:
-    branches: [ "main" ]
-defaults:
-  run:
-    shell: pwsh
 
 jobs:
   build:
