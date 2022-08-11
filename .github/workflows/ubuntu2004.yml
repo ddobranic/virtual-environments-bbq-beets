@@ -1,1 +1,8 @@
-
+name: hello-world
+on: push
+jobs:
+  generate-image:
+    runs-on: ci-agent
+    steps:
+      - name: Generate Ubuntu 20.04
+        uses:  ./.github/workflows/ubuntu-win-generation
