@@ -1,5 +1,6 @@
-name: hello-world
-on: push
+name: Ubuntu-22.04
+on:
+  workflow_dispatch:
 jobs:
   generate-image:
     runs-on: ci-agent
@@ -10,4 +11,4 @@ jobs:
           repository: actions/runner-images
           
       - name: Generate Ubuntu 20.04
-        uses:  ./.github/workflows/ubuntu-win-generation
+        uses:  ./.github/workflows/ubuntu-win-generation.yml
