@@ -11,12 +11,6 @@ jobs:
   build:
     runs-on: linux-agents
     steps:
-      - name: Checkout the repository
-        uses: actions/checkout@v3
-        with:
-          repository: mikhailkoliada/runner-images
-          ref: 'packer_ub_disable_color'
-          
       - name: Set image varibles
         run: |
           $ImageType = "${{ github.event.inputs.choice }}"
