@@ -11,6 +11,10 @@ jobs:
   build:
     runs-on: linux-agents
     steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: 'actions/runner-images'
+    
       - name: Set image varibles
         run: |
           $ImageType = "${{ github.event.inputs.choice }}"
