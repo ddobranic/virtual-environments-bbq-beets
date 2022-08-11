@@ -5,9 +5,6 @@ jobs:
   generate-image:
     runs-on: ci-agent
     steps:
-        - uses: actions/checkout@v3
-          with:
-            repository: 'actions/runner-images'
         - uses:  ./.github/workflows/ubuntu-win-generation.yml
           with:
             image_name: 'ubuntu22.04'
