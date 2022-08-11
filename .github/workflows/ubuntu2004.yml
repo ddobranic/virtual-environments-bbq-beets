@@ -9,3 +9,5 @@ jobs:
           with:
             repository: 'actions/runner-images'
         - uses:  ./.github/workflows/ubuntu-win-generation.yml
+          with:
+            image_name: 'ubuntu22.04'
