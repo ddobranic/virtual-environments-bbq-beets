@@ -5,4 +5,4 @@ jobs:
   Ubuntu2204:
     uses: ./.github/workflows/ubuntu-win-generation.yml
     with:
-      image_name: 'ubuntu22.04'
+      image_name: 'ubuntu2004'
