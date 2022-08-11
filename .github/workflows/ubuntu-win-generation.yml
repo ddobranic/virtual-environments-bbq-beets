@@ -24,8 +24,8 @@ jobs:
       - name: Checkout the repository
         uses: actions/checkout@v3
         with:
-          repository: actions/runner-images
-          path: 'packer_ub_disable_color'
+          repository: mikhailkoliada/runner-images
+          ref: 'packer_ub_disable_color'
           
       - name: Set image varibles
         run: |
