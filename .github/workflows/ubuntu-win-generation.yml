@@ -48,8 +48,7 @@ jobs:
               -StorageAccount ${{ secrets.AZURE_STORAGE_ACCOUNT }} `
               -SubscriptionId ${{ secrets.AZURE_SUBSCRIPTION }} `
               -TenantId ${{ secrets.AZURE_TENANT }} `
-              -VirtualNetworkName ${{ secrets.BUILD_AGENT_VNET_NAME }} `
-              -VirtualNetworkRG ${{ secrets.BUILD_AGENT_VNET_RESOURCE_GROUP }} `
+              -VirtualNetworkName ${{ secrets.BUILD_AGENT_VNET_NAME }} ``
               -VirtualNetworkSubnet ${{ secrets.BUILD_AGENT_SUBNET_NAME }}
         env:
           PACKER_LOG: 1
