@@ -47,5 +47,9 @@ jobs:
               -ResourceGroup ${{ secrets.AZURE_RESOURCE_GROUP }} `
               -StorageAccount ${{ secrets.AZURE_STORAGE_ACCOUNT }} `
               -SubscriptionId ${{ secrets.AZURE_SUBSCRIPTION }} `
-              -TenantId ${{ secrets.AZURE_TENANT }}
+              -TenantId ${{ secrets.AZURE_TENANT }} `
+              -VirtualNetworkName ${{ BUILD_AGENT_VNET_NAME }} `
+              -VirtualNetworkRG ${{ BUILD_AGENT_VNET_RESOURCE_GROUP }} `
+              -VirtualNetworkSubnet ${{ BUILD_AGENT_SUBNET_NAME }}
+              
               
