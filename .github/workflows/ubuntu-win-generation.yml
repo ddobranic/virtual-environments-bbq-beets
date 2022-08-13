@@ -54,5 +54,6 @@ jobs:
         env:
           PACKER_LOG: 1
           PACKER_LOG_PATH: ${{ runner.temp }}/packer-log.txt
+          RUN_VALIDATION_FLAG: 0
               
               
