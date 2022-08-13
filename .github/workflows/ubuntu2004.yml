@@ -1,11 +1,28 @@
 on:
   workflow_dispatch:
+    inputs:
+      CUSTOM_REPOSITORY:
+        description: 'Custom repository URL'
+        required: false
+      CUSTOM_REPOSITORY_HASH:
+        description: 'Commit hash'
+        required: false
   pull_request_target:
     types: [opened]
   
 jobs:
-  Ubuntu2004:
+  Ubuntu_2004:
+    if: "${{ github.event.inputs.CUSTOM_REPOSITORY == '' && github.event.inputs.CUSTOM_REPOSITORY_HASH == '' }}"
     uses: ./.github/workflows/ubuntu-win-generation.yml
     with:
       image_name: 'ubuntu2004'
+    secrets: inherit
+
+  Ubuntu_2004_custom:
+    if: "${{ github.event.inputs.CUSTOM_REPOSITORY != '' && github.event.inputs.CUSTOM_REPOSITORY_HASH != '' }}"
+    uses: ./.github/workflows/ubuntu-win-generation.yml
+    with:
+      image_name: 'ubuntu2004'
+      custom_repo: ${{ github.event.inputs.CUSTOM_REPOSITORY }}
+      custom_repo_hash: ${{ github.event.inputs.CUSTOM_REPOSITORY_HASH }}
     secrets: inherit
