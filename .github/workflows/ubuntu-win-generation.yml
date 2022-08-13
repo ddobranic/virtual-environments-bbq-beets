@@ -6,6 +6,14 @@ on:
         type: string
         description: An OS image to build
         required: true
+      custom_repo:
+        type: string
+        description: Custom repo to checkout
+        required: false
+      custom_repo_hash:
+        type: string
+        description: Custom repo hash
+        required: false
 defaults:
   run:
     shell: pwsh
@@ -14,9 +22,18 @@ jobs:
   build:
     runs-on: linux-agents
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        if: ${{ inputs.custom_repo == '' && inputs.custom_repo_hash == ''  }}
+        uses: actions/checkout@v3
         with:
           repository: 'actions/runner-images'
+          
+      - name: Checkout custom repository
+        if: ${{ inputs.custom_repo != '' && inputs.custom_repo_hash != ''  }}
+        uses: actions/checkout@v3
+        with:
+          repository: '${{ nputs.custom_repo }}'
+          ref: '${{ nputs.custom_repo_hash }}'
     
       - name: Set image varibles
         run: |
