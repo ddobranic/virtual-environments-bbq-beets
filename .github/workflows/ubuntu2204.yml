@@ -1,9 +1,28 @@
 on:
   workflow_dispatch:
+    inputs:
+      CUSTOM_REPOSITORY:
+        description: 'Custom repository URL'
+        required: false
+      CUSTOM_REPOSITORY_HASH:
+        description: 'Commit hash'
+        required: false
+  pull_request_target:
+    types: [opened]
   
 jobs:
-  Ubuntu2204:
+  Ubuntu_2204:
+    if: "${{ github.event.inputs.CUSTOM_REPOSITORY == '' && github.event.inputs.CUSTOM_REPOSITORY_HASH == '' }}"
     uses: ./.github/workflows/ubuntu-win-generation.yml
     with:
       image_name: 'ubuntu2204'
+    secrets: inherit
+
+  Ubuntu_2204_custom:
+    if: "${{ github.event.inputs.CUSTOM_REPOSITORY != '' && github.event.inputs.CUSTOM_REPOSITORY_HASH != '' }}"
+    uses: ./.github/workflows/ubuntu-win-generation.yml
+    with:
+      image_name: 'ubuntu2204'
+      custom_repo: ${{ github.event.inputs.CUSTOM_REPOSITORY }}
+      custom_repo_hash: ${{ github.event.inputs.CUSTOM_REPOSITORY_HASH }}
     secrets: inherit
