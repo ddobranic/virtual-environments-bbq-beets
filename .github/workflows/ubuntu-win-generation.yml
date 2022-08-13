@@ -33,7 +33,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: '${{ nputs.custom_repo }}'
-          ref: '${{ nputs.custom_repo_hash }}'
+          ref: '${{ inputs.custom_repo_hash }}'
     
       - name: Set image varibles
         run: |
