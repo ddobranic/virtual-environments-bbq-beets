@@ -20,7 +20,7 @@ defaults:
 
 jobs:
   build:
-    runs-on: linux-agents
+    runs-on: windows-agents
     steps:
       - name: Checkout repository
         if: ${{ inputs.custom_repo == '' && inputs.custom_repo_hash == ''  }}
