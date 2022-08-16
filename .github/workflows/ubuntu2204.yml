@@ -15,15 +15,6 @@ on:
   
 jobs:
   Ubuntu_2204:
-    if: "${{ github.event.inputs.CUSTOM_REPOSITORY == '' && github.event.inputs.CUSTOM_REPOSITORY_HASH == '' }}"
-    uses: ./.github/workflows/ubuntu-win-generation.yml
-    with:
-      image_name: 'ubuntu2204'
-      image_readme_name: 'Ubuntu2204-Readme.md'
-    secrets: inherit
-
-  Ubuntu_2204_custom:
-    if: "${{ github.event.inputs.CUSTOM_REPOSITORY != '' && github.event.inputs.CUSTOM_REPOSITORY_HASH != '' }}"
     uses: ./.github/workflows/ubuntu-win-generation.yml
     with:
       image_name: 'ubuntu2204'
