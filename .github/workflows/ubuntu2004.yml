@@ -2,7 +2,7 @@ on:
   workflow_dispatch:
     inputs:
       CUSTOM_REPOSITORY:
-        description: 'Custom repository URL'
+        description: 'Custom repository (owner/repo)'
         required: false
       CUSTOM_REPOSITORY_HASH:
         description: 'Commit hash'
