@@ -24,7 +24,7 @@ defaults:
 
 jobs:
   build:
-    runs-on: windows-agents
+    runs-on: ci-agent
     steps:
       - name: Checkout repository
         if: ${{ inputs.custom_repo == '' && inputs.custom_repo_hash == ''  }}
