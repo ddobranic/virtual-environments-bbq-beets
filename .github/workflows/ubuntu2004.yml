@@ -14,6 +14,7 @@ jobs:
     uses: ./.github/workflows/ubuntu-win-generation.yml
     with:
       image_name: 'ubuntu2004'
+      image_readme_name: 'Ubuntu2004-Readme.md'
     secrets: inherit
 
   Ubuntu_2004_custom:
@@ -21,6 +22,7 @@ jobs:
     uses: ./.github/workflows/ubuntu-win-generation.yml
     with:
       image_name: 'ubuntu2004'
+      image_readme_name: 'Ubuntu2004-Readme.md'
       custom_repo: ${{ github.event.inputs.CUSTOM_REPOSITORY }}
       custom_repo_hash: ${{ github.event.inputs.CUSTOM_REPOSITORY_HASH }}
     secrets: inherit
