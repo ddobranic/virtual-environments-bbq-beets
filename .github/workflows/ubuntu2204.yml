@@ -7,6 +7,8 @@ on:
       CUSTOM_REPOSITORY_HASH:
         description: 'Commit hash'
         required: false
+  schedule:
+    - cron: '0 0 * * *'
   
 jobs:
   Ubuntu_2204:
