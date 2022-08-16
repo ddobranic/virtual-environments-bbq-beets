@@ -109,8 +109,8 @@ jobs:
           ./images.CI/linux-and-win/cleanup.ps1 `
             -ResourcesNamePrefix ${{ github.run_number }} `
             -Image ${{ env.ImageType }} `
-            -StorageAccount ${{ secret.AZURE_STORAGE_ACCOUNT }} `
-            -SubscriptionId ${{ secret.AZURE_SUBSCRIPTION }} `
-            -ClientId ${{ secret.CLIENT_ID }} `
-            -ClientSecret ${{ secret.CLIENT_SECRET }} `
-            -TenantId ${{ secret.AZURE_TENANT }}
+            -StorageAccount ${{ secrets.AZURE_STORAGE_ACCOUNT }} `
+            -SubscriptionId ${{ secrets.AZURE_SUBSCRIPTION }} `
+            -ClientId ${{ secrets.CLIENT_ID }} `
+            -ClientSecret ${{ secrets.CLIENT_SECRET }} `
+            -TenantId ${{ secrets.AZURE_TENANT }}
