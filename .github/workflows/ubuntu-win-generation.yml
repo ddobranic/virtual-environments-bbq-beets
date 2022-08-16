@@ -6,6 +6,10 @@ on:
         type: string
         description: An OS image to build
         required: true
+      image_readme_name:
+        type: string
+        description: README file path
+        required: true
       custom_repo:
         type: string
         description: Custom repo to checkout
@@ -72,5 +76,16 @@ jobs:
           PACKER_LOG: 1
           PACKER_LOG_PATH: ${{ runner.temp }}/packer-log.txt
           RUN_VALIDATION_FLAG: false
+          
+      - name: Output Readme file content
+        run: |
+          Get-Content -Path (Join-Path "$env:TemplateDirectoryPath" "${{ inputs.image_readme_name }}")
+          
+      - name: Print provisioners duration
+        run: |
+          ./images.CI/measure-provisioners-duration.ps1 `
+            -PackerLogPath "$${{ runner.temp }}/packer-log.txt" `
+            -PrefixToPathTrim "$env:TemplateDirectoryPath" `
+            -PrintTopNLongest 25
               
               
