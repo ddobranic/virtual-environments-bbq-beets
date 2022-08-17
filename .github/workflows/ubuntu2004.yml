@@ -7,9 +7,9 @@ on:
       CUSTOM_REPOSITORY_HASH:
         description: 'Commit hash'
         required: false
-  pull_request_target:
+  pull_request:
     paths:
-    - 'images/linux/'
+    - 'images/linux/**'
   schedule:
     - cron: '0 0 * * *'
   
