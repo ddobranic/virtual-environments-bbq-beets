@@ -29,8 +29,6 @@ jobs:
       - name: Checkout repository
         if: ${{ inputs.custom_repo == '' && inputs.custom_repo_hash == ''  }}
         uses: actions/checkout@v3
-        with:
-          repository: 'actions/runner-images'
           
       - name: Checkout PR
         if: ${{ github.event_name == 'pull_request_target' }}
